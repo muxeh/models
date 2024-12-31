@@ -40,23 +40,19 @@ class SocketUDP {
         void recv(char* buffer, const uint16_t size);
 
         /// Members
-        // Flag for send configuration status (true = configured)
+        // Flag for configuration status (true = configured)
         bool m_send_confgd;
+        bool m_recv_confgd;
+        // Ports
+        uint16_t m_send_port;
+        uint16_t m_recv_port;
+        // Sockets
+        int m_send_socket;
+        int m_recv_socket;
         // Send IP address
         char m_send_ip[MAX_ADDR_SIZE];
-        // Send port
-        uint16_t m_send_port;
-        // Send socket
-        int m_send_socket;
         // Send server address
         struct sockaddr_in m_send_server_addr;
-        // Flag for receive configuration status (true = configured)
-        bool m_recv_confgd;
-        // Receive port
-        uint16_t m_recv_port;
-        // Receive socket
-        int m_recv_socket;
-
 };
 
 #endif /* SOCKET_UDP_HPP */

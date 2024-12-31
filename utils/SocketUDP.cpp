@@ -1,6 +1,14 @@
 #include "SocketUDP.hpp"
 
-SocketUDP::SocketUDP() : m_send_confgd(false) {};
+SocketUDP::SocketUDP() : m_send_confgd(false),
+                         m_recv_confgd(false),
+                         m_send_port(0),
+                         m_recv_port(0),
+                         m_send_socket(0),
+                         m_recv_socket(0),
+                         m_send_ip(""),
+                         m_send_server_addr({}) {
+};
 
 SocketUDP::~SocketUDP() {
     // Check if send socket is configured
